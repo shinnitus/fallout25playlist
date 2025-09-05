@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcdd79; /* Pastel yellow */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent unintended scrolling */
+}
+
+.album-cover-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.album-cover {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player-container {
+    background-color: #82dbff; /* Pastel blue */
+    border-radius: 15px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.player-display {
+    margin-bottom: 15px;
+}
+
+.track-title, .track-artist {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #fcdd79; /* Yellow */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #f9e87c; /* Slightly darker yellow */
+}
+
+input[type="range"] {
+    width: 80px;
+    margin-left: 10px;
+}
+
+/* Dropdown container */
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fcdd79; /* Matches the player background */
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: hidden;
+    max-height: 0; /* Initially hidden */
+    transition: max-height 0.3s ease; /* Smooth toggle effect */
+}
+
+/* Open dropdown (activated state) */
+.dropdown-container.open {
+    max-height: 200px; /* Adjust height based on tracklist size */
+    overflow-y: auto; /* Enables scrolling if content exceeds max height */
+}
+
+/* Tracklist styles */
+.tracklist {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.tracklist li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.tracklist li:hover {
+    background-color: #fff;
+}
+
+/* Dropdown items for fallback dropdown menu */
+.dropdown {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 250px;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ensure visibility when toggled */
+.hidden {
+    display: none;
+}
+
+
